@@ -1,0 +1,100 @@
+
+<ion-header>
+  <ion-col>
+    <div class="divImg">
+      <img src="assets/icon/usuario-header.png">
+    </div>
+    <div class="titleForm">Crear una cuenta</div>    
+  </ion-col>
+</ion-header>
+
+<ion-content padding class="content-cntainer">
+    <ion-slides inset spaceBetween=5 #slides>
+        <ion-slide>        
+          <ion-label left>¿Cual es tu correo electronico?</ion-label>                   
+          <div class="divRow">
+                <ion-input class="input-cls" type="text" placeholder="Correo electrónico" required></ion-input>
+           </div>     
+          <div class="divRow">
+                <ion-input class="input-cls" type="text" placeholder="Confirma correo electrónico" required></ion-input> 
+          </div>              
+            <button ion-button  class="continue-btn" (click)="nextSlide()">Continuar</button>
+        </ion-slide>
+
+        <ion-slide>    
+          <ion-label left>¿Cual es tu nombre?</ion-label>
+          <div class="divRow">
+            <ion-input class="input-cls" type="text" placeholder="Nombre" #name></ion-input>
+          </div>
+          <div class="divRow">
+            <ion-input class="input-cls" type="text" placeholder="Apellido paterno" required></ion-input> 
+          </div>
+          <div class="divRow">
+            <ion-input class="input-cls" type="text" placeholder="Apellido materno" required></ion-input>                
+          </div>
+          <div class="divRow">
+            <button ion-button class="continue-btn" (click)="nextSlide()">Continuar</button>
+          </div>
+          <div class="footerSection">
+            <div class="divRow">
+              <button ion-button class="back-btn"(click)="previousSlide()">
+                <img src="assets/icon/bt-regresar.png"> 
+              </button>
+            </div>
+            <div class="divRow">Paso {{currentStep}} de {{maxSlides}}</div>
+          </div>
+        </ion-slide>
+
+        <ion-slide #gender>
+          <ion-label left>¿Cual es tu género?</ion-label>
+          <div class="divRow" *ngFor="let item of selections">
+            <ion-item >
+                <ion-label>{{item.title}}</ion-label>
+                <ion-checkbox color="dark"  [(ngModel)]="item.checked" (click)="updateCheckbox(item.index, selections)"></ion-checkbox>
+            </ion-item>
+          </div> 
+          <div class="divRow">
+            <button ion-button class="continue-btn" (click)="nextSlide()">Continuar</button>
+          </div>         
+          <div class="footerSection" style="margin-top:40%;">
+            <div class="divRow">
+              <button ion-button class="back-btn"(click)="previousSlide()">
+                <img src="assets/icon/bt-regresar.png"> 
+              </button>
+            </div>
+            <div class="divRow">Paso {{currentStep}} de {{maxSlides}}</div>
+          </div>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-label left>¿Cual es tu fecha de nacimiento?</ion-label>
+          <ion-item >
+            <!-- <ion-label>Período</ion-label> -->
+            <div style="width :100%;" (click)="launchPicker()">
+              <span>Periodo</span><span style="right: 0; position: absolute;">{{datePicked}}</span>
+            </div>
+          </ion-item>
+           <div class="divRow">
+            <button ion-button class="continue-btn" (click)="nextSlide()">Continuar</button>
+          </div>   
+          <div class="footerSection" style="margin-top: 58%;">
+            <div class="divRow">
+              <button ion-button class="back-btn"(click)="previousSlide()">
+                <img src="assets/icon/bt-regresar.png"> 
+              </button>
+            </div>
+            <div class="divRow">Paso {{currentStep}} de {{maxSlides}}</div>
+          </div>
+
+        </ion-slide>
+        <ion-slide>
+          <div>¡Felicidades!</div>
+          <div>Ya eres un miembro de la comunidad Bunch, no olvides llenar todos tus datos en tu perfil para poder empezar a ganar más.</div>
+          <div class="divRow">
+            <button ion-button class="continue-btn" (click)="goHome()">Comenzar</button>
+          </div>  
+        </ion-slide>
+
+    </ion-slides>
+
+</ion-content>

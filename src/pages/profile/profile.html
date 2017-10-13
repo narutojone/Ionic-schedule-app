@@ -1,0 +1,52 @@
+<ion-header class="tab-header-cls">
+  <ion-item style="background-color: transparent;">
+    <ion-avatar>
+      <img width="80" height="80" src="assets/img/perfil.jpg">
+    </ion-avatar>
+    <div class="titleForm">Perfil</div>    
+  </ion-item>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item class="ionitem-cls" detail-push>
+      <ion-icon item-start><img width="40" height="30" src="assets/icon/alertas-menu-on.png"></ion-icon>
+      <ion-label>Notificaciones</ion-label>
+      <ion-toggle item-end [(ngModel)]="enableNotif"></ion-toggle>    
+    </ion-item>
+
+    <ion-item class="ionitem-cls" detail-push>
+      <ion-icon item-start><img width="40" height="30" src="assets/icon/perfil-seguimiento.png"></ion-icon>
+      <ion-label>Seguimiento inteligente</ion-label>
+      <ion-toggle item-end [(ngModel)]="inteligenFollow"></ion-toggle>    
+    </ion-item>
+
+    <ion-item class="ionitem-cls" detail-push>
+      <ion-icon item-start><img width="40" height="30" src="assets/icon/perfil-geolocalizacion.png"></ion-icon>
+      <ion-label>Geolocalización</ion-label>
+      <ion-toggle item-end [(ngModel)]="geoLocalization"></ion-toggle>    
+    </ion-item>
+
+    <ion-item class="ionitem-cls" detail-push>
+      <ion-icon item-start><img width="40" height="30" src="assets/icon/perfil-tipo-usuario.png"></ion-icon>
+      <ion-label>Usar aplicación como cliente</ion-label>
+      <ion-toggle item-end [(ngModel)]="isClient"  (ionChange)="UIpdate(isClient)"></ion-toggle>    
+    </ion-item>
+
+    <button ion-item detail-push class="ionitem-cls" ion-content>
+      <ion-icon item-start><img width="40" height="30" src="assets/icon/perfil-centro-ayuda.png"></ion-icon>
+      <span>Centro de ayuda</span>
+      <button  class="chat-button" style="width: 100%;height: 100%;background: transparent;" ></button>
+    </button>
+
+
+    <button ion-item detail-push class="ionitem-cls" ion-content>
+      <ion-icon item-start><img width="40" height="30" src="assets/icon/perfil-bunch.png"></ion-icon>
+      <span>Bunch</span>
+      <button  class="chat-button" style="width: 100%;height: 100%;background: transparent;" ></button>
+    </button>
+
+    <button ion-button full class="publish-adv-btn" (click)="logout()">Cerrar sesión</button>
+  </ion-list>
+
+</ion-content>

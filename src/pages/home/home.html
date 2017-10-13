@@ -1,0 +1,13 @@
+
+<ion-tabs #appTabs>
+  <ion-tab [root]="tab1Root" tabIcon="notification"></ion-tab> 
+  <ion-tab [root]="tab2Root" tabIcon="texting" ></ion-tab>
+
+  <ion-tab #tab3 tabIcon="advertisement"  [root] ="tab3Root"></ion-tab>
+  <ion-tab #tab4 tabIcon="statistics" [root]="tab4Root"></ion-tab>
+<!-- 
+  <ion-tab #tab5 tabIcon="menu"  [root]="tab6Root" [hidden]="isClient"></ion-tab>
+  <ion-tab #tab6 tabIcon="products"  [root] = "tab5Root"  [class.hideTab]="isClient" ></ion-tab> -->
+
+  <ion-tab [root]="tab7Root" tabIcon="profile" ></ion-tab>
+</ion-tabs>

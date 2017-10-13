@@ -1,0 +1,25 @@
+.tab-header-cls {
+    background: url('../assets/img/splash2.jpg');
+    background-position-y: bottom; 
+    color: white;
+    margin: 0 auto;
+    min-height: 100px;
+
+    .divImg {
+        width: 15%;
+        margin: 5px auto;
+        img {
+            height: 40px !important;            
+            margin-top: 15px;
+        }
+    }
+    .titleForm {
+        width: 90%;
+        margin: 5px auto;
+        text-align: center;
+    }
+}
+
+page-statistics {
+
+}
