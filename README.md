@@ -46,8 +46,6 @@ Ok, now we should have node installated, we can check it by executing: node -v ,
     After that, we have to import the project in our ide (xCode for iOS and Android Studio for windows and linux), and start the app in our device.
 
     
-
-
 ### Contribution guidelines ###
 
 * Writing tests
